@@ -14,10 +14,8 @@ capability.allowClientIncoming("support_agent");
 var token = capability.generate(600);
 
 router.post('/', function(req, res, next) {
-	//console.log('token:'+util.inspect(token));
 	res.writeHead(200, {'content-type': 'text/json' });
 	res.end(JSON.stringify({ token : token}) );
-
 });
 
 module.exports = router;
