@@ -10,7 +10,6 @@ var socketIO = require('socket.io');
 
 var phone = require('./routes/phone');
 var call = require('./routes/call');
-var work = require('./routes/work');
 var create_token = require('./routes/create_token');
 
 var app = express();
@@ -41,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/phone', phone);
 app.use('/call', call);
-app.use('/work', work);
 app.use('/create_token', create_token);
 
 // catch 404 and forward to error handler
