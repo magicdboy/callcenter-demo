@@ -252,6 +252,24 @@
 		            }
 		        });
 		    }
+		    
+		    
+		    function callTest() {
+		        //トークン取得
+		        $.ajax({
+		            type: "POST",
+		            scriptCharset: 'utf-8',
+		            dataType: 'json',
+		            url: "/create_token/callTest",
+		            success: function (res) {
+		            	console.log('token:'+JSON.stringify(res));
+		                Twilio.Device.setup(res.token, {debug: true});
+		            },
+		            error: function (err) {
+		                console.log(err);
+		            }
+		        });
+		    }
 		 
 		    Twilio.Device.ready(function (device) {
 		        $("#log").text("Ready");
