@@ -254,12 +254,13 @@
 		    }
 		    
 		    
-		    function callTest() {
+		    function callTest(tellnum) {
 		        //トークン取得
 		        $.ajax({
 		            type: "POST",
 		            scriptCharset: 'utf-8',
 		            dataType: 'json',
+			    data : {parameter1 : tellnum },
 		            url: "/create_token/callTest",
 		            success: function (res) {
 		            	console.log('token:'+JSON.stringify(res));
@@ -360,7 +361,7 @@
 		    	//console.log('電話番号:'+$("#input-phone-number").val());
 		    	//var params = {"phoneNumber": $("#input-phone-number").val()};
 		        //Twilio.Device.connect(params);
-			callTest();
+			callTest($("#input-phone-number").val());
 		    });
 		 
 		    //通話ボタン
