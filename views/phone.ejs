@@ -357,9 +357,10 @@
 		 	});
 		    //通話ボタン
 		    $("#call").click(function () {
-		    	console.log('電話番号:'+$("#input-phone-number").val());
-		    	var params = {"phoneNumber": $("#input-phone-number").val()};
-		        Twilio.Device.connect(params);
+		    	//console.log('電話番号:'+$("#input-phone-number").val());
+		    	//var params = {"phoneNumber": $("#input-phone-number").val()};
+		        //Twilio.Device.connect(params);
+			callTest();
 		    });
 		 
 		    //通話ボタン
