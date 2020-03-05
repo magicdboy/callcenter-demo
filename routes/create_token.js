@@ -15,15 +15,13 @@ router.post('/', function(req, res, next) {
 });
 
 router.post('/callTest', function(req, res, next) {
-    console.log('test:');
-    console.log(req.body.parameter1);
     const accountSid = 'ACa0899a5c95f91514458c1af6f33708c4';
     const authToken = 'a3ad82783120eeaf5d475ae62576f622';
     const client = require('twilio')(accountSid, authToken);
     client.calls
           .create({
              url: 'http://demo.twilio.com/docs/voice.xml',
-             to: '+819060357725',
+             to: '+81' + req.body.parameter1,
              from: '+12072557438'
            })
           .then(call => console.log(call.sid));
