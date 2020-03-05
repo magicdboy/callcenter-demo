@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-	<script src="https://ap.salesforce.com/support/api/37.0/interaction.js"></script>
+	<script src="https://ap.salesforce.com/support/api/38.0/lightning/opencti_min.js"></script>
 	<script src="https://media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
 	<style>
 		.active-icon{
@@ -363,6 +363,10 @@
 		        //Twilio.Device.connect(params);
 			//callTest($("#input-phone-number").val());
 			sforce.interaction.searchAndScreenPop($("#input-phone-number").val(),'','inbound');
+			sforce.opencti.searchAndScreenPop({searchParams:$("#input-phone-number").val(), 
+			queryParams:'', 
+			callType:sforce.opencti.CALL_TYPE.INBOUND, 
+			deferred:false, callback:callback});
 		    });
 		 
 		    //通話ボタン
