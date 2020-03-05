@@ -361,7 +361,8 @@
 		    	//console.log('電話番号:'+$("#input-phone-number").val());
 		    	//var params = {"phoneNumber": $("#input-phone-number").val()};
 		        //Twilio.Device.connect(params);
-			callTest($("#input-phone-number").val());
+			//callTest($("#input-phone-number").val());
+			sforce.interaction.searchAndScreenPop('Contact', 'HomePhone='+$("#input-phone-number").val(), 'inbound', callback);
 		    });
 		 
 		    //通話ボタン
